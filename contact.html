@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact section · modern & clean</title>
+    <!-- Font Awesome 6 (free) for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f8;   /* soft background to show section boundaries */
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        /* main contact section card */
+        .contact-section {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 10, 30, 0.15), 0 5px 12px -4px rgba(0, 0, 0, 0.05);
+            padding: 3rem 2.5rem;
+            transition: all 0.2s ease;
+        }
+
+        /* section header */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0a2540;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            color: #5b6f87;
+            max-width: 500px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* 2‑column grid: info & form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* --- left side: contact info cards --- */
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            background: #f9fbfd;
+            padding: 1.3rem 1.5rem;
+            border-radius: 1.5rem;
+            transition: background 0.2s, transform 0.15s;
+            border: 1px solid #eef2f7;
+        }
+
+        .info-item:hover {
+            background: #ffffff;
+            border-color: #d0ddeb;
+            box-shadow: 0 8px 18px -10px rgba(18, 52, 106, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .icon-bg {
+            background: #e3f0ff;
+            color: #1f5f9e;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a344d;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-content p {
+            color: #3f556e;
+            line-height: 1.5;
+            font-size: 0.98rem;
+        }
+
+        .info-content a {
+            color: #0f3b6a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s;
+        }
+
+        .info-content a:hover {
+            border-bottom: 1px dotted #0f3b6a;
+        }
+
+        /* small social row */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-left: 0.2rem;
+        }
+
+        .social-link {
+            background: #f0f5fd;
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5885;
+            font-size: 1.3rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: #1f4f8a;
+            color: white;
+            transform: scale(1.07);
+        }
+
+        /* --- right side: contact form --- */
+        .contact-form {
+            background: #fbfdff;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6ecf4;
+            box-shadow: 0 8px 18px -10px rgba(0,20,40,0.06);
+        }
+
+        .form-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #304b6b;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        label i {
+            margin-right: 0.3rem;
+            color: #51799e;
+            font-size: 0.85rem;
+        }
+
+        input, textarea {
+            font-family: 'Inter', sans-serif;
+            border: 1px solid #d7e0e9;
+            border-radius: 1.2rem;
+            padding: 0.9rem 1.3rem;
+            font-size: 0.98rem;
+            background: #ffffff;
+            transition: border 0.2s, box-shadow 0.2s;
+            outline: none;
+            color: #1d334b;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #2667b5;
+            box-shadow: 0 0 0 3px rgba(38, 103, 181, 0.15);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #95adc7;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .btn-submit {
+            background: #0e3e6b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            letter-spacing: 0.3px;
+            margin-top: 0.8rem;
+            box-shadow: 0 8px 14px -8px rgba(12, 52, 98, 0.4);
+        }
+
+        .btn-submit:hover {
+            background: #165a94;
+            box-shadow: 0 12px 18px -8px rgba(18, 68, 122, 0.5);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .btn-submit i {
+            font-size: 1rem;
+        }
+
+        .form-footnote {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: #7187a3;
+        }
+
+        /* simple responsive */
+        @media (max-width: 800px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+            .info-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* extra micro-interaction */
+        .highlight-stroke {
+            stroke: #1f5f9e;
+        }
+    </style>
+</head>
+<body>
+    <section class="contact-section">
+        <!-- header -->
+        <div class="contact-header">
+            <h2>👋 Get in touch</h2>
+            <p>We’d love to hear from you. Send us a message and we’ll respond as soon as possible.</p>
+        </div>
+
+        <!-- main contact area (info + form) -->
+        <div class="contact-container">
+            <!-- left: contact information blocks -->
+            <div class="info-grid">
+                <!-- email -->
+                <div class="info-item">
+                    <div class="icon-bg"><i class="fa-regular fa-envelope"></i></div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:hello@creativestudio.com">hello@creativestudio.com</a></p>
+                        <p style="font-size:0.9rem; color:#6a7f9b;">We reply within 24h</p>
+                    </div>
+                </div>
+
+                <!-- phone -->
+                <div class="info-item">
+                    <div class="icon-bg"><i class="fa-regular fa-mobile-notch" style="transform: rotate(5deg);"></i></div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+15550001234">+1 (555) 000-1234</a></p>
+                        <p style="font-size:0.9rem; color:#6a7f9b;">Mon–Fri, 9am–6pm</p>
+                    </div>
+                </div>
+
+                <!-- live chat / office -->
+                <div class="info-item">
+                    <div class="icon-bg"><i class="fa-regular fa-message"></i></div>
+                    <div class="info-content">
+                        <h3>Live chat</h3>
+                        <p>Chat with us during business hours</p>
+                        <p style="font-size:0.9rem; margin-top:5px;"><i class="fa-regular fa-clock" style="margin-right:4px;"></i> 9:00 – 18:00 GMT</p>
+                    </div>
+                </div>
+
+                <!-- office address -->
+                <div class="info-item">
+                    <div class="icon-bg"><i class="fa-regular fa-building"></i></div>
+                    <div class="info-content">
+                        <h3>Studio</h3>
+                        <p>47 Astor Place, 4th floor<br>New York, NY 10003</p>
+                    </div>
+                </div>
+
+                <!-- mini social links (inside left column but visually grouped) -->
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- right: contact form -->
+            <div class="contact-form">
+                <form action="#" method="post" id="demoContactForm">
+                    <div class="form-row form-group">
+                        <label for="name"><i class="fa-regular fa-user"></i> Full name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Alex Rivera" required>
+                    </div>
+
+                    <div class="form-row form-group">
+                        <label for="email"><i class="fa-regular fa-envelope"></i> Email address</label>
+                        <input type="email" id="email" name="email" placeholder="alex@example.com" required>
+                    </div>
+
+                    <div class="form-row form-group">
+                        <label for="subject"><i class="fa-regular fa-pen-to-square"></i> Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What’s this about?">
+                    </div>
+
+                    <div class="form-row form-group">
+                        <label for="message"><i class="fa-regular fa-comment"></i> Message</label>
+                        <textarea id="message" name="message" placeholder="Hi team, I’d love to discuss ..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> Send message</button>
+                    <p class="form-footnote">We respect your privacy — no spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- tiny script to intercept form submit (prevents page reload, just for demo) -->
+    <script>
+        (function() {
+            const form = document.getElementById('demoContactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();   // avoid actual POST (demo only)
+                    // small visual feedback
+                    const btn = form.querySelector('.btn-submit');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-regular fa-circle-check"></i> Sent! (demo)';
+                    btn.style.background = '#1f7b4d';
+                    btn.style.boxShadow = 'none';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '#0e3e6b';
+                        btn.style.boxShadow = '0 8px 14px -8px rgba(12, 52, 98, 0.4)';
+                    }, 2000);
+                    // optionally clear or leave – we keep fields as they are for demo
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

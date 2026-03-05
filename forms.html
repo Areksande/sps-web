@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement Sports | Earn Your Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #121212; }
+        .heading-font { font-family: 'Orbitron', sans-serif; }
+        .slant-bg { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+        .gold-glow:hover { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+    </style>
+</head>
+<body class="text-white">
+
+    <nav class="flex justify-between items-center p-6 bg-transparent absolute w-full z-10">
+        <div class="text-2xl font-bold heading-font text-yellow-400 tracking-tighter italic">ACHIEVE_</div>
+        <div class="space-x-8 hidden md:flex font-semibold uppercase text-sm tracking-widest">
+            <a href="#" class="hover:text-yellow-400 transition">Leaderboards</a>
+            <a href="#" class="hover:text-yellow-400 transition">Athletes</a>
+            <a href="#" class="hover:text-yellow-400 transition">Training</a>
+        </div>
+        <button class="border-2 border-yellow-400 px-6 py-2 text-yellow-400 font-bold hover:bg-yellow-400 hover:text-black transition">LOGIN</button>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden slant-bg bg-neutral-900">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=2070" alt="Athlete" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <h1 class="heading-font text-5xl md:text-8xl mb-4 italic tracking-tighter">
+                GREATNESS IS <span class="text-yellow-400">EARNED</span>
+            </h1>
+            <p class="text-gray-300 max-w-xl mx-auto mb-8 text-lg">
+                Track your stats, crush your personal records, and join the elite ranks of the world's most dedicated athletes.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-yellow-400 text-black font-black px-10 py-4 rounded-sm gold-glow transition transform hover:-translate-y-1">START YOUR JOURNEY</button>
+                <button class="bg-white/10 backdrop-blur-md border border-white/20 px-10 py-4 font-bold hover:bg-white/20 transition">VIEW GLOBAL RANKINGS</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-neutral-800 p-8 border-l-4 border-yellow-400">
+                <h3 class="text-gray-400 uppercase text-xs font-bold tracking-widest mb-2">Total Milestones</h3>
+                <p class="text-4xl font-bold heading-font">12,402</p>
+                <div class="w-full bg-gray-700 h-1 mt-4">
+                    <div class="bg-yellow-400 h-1 w-[75%]"></div>
+                </div>
+            </div>
+            <div class="bg-neutral-800 p-8 border-l-4 border-yellow-400">
+                <h3 class="text-gray-400 uppercase text-xs font-bold tracking-widest mb-2">Active Athletes</h3>
+                <p class="text-4xl font-bold heading-font">85.2K</p>
+                <div class="w-full bg-gray-700 h-1 mt-4">
+                    <div class="bg-yellow-400 h-1 w-[90%]"></div>
+                </div>
+            </div>
+            <div class="bg-neutral-800 p-8 border-l-4 border-yellow-400">
+                <h3 class="text-gray-400 uppercase text-xs font-bold tracking-widest mb-2">Rewards Distributed</h3>
+                <p class="text-4xl font-bold heading-font">$2.4M</p>
+                <div class="w-full bg-gray-700 h-1 mt-4">
+                    <div class="bg-yellow-400 h-1 w-[45%]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
